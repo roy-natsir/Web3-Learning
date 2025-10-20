@@ -1,0 +1,150 @@
+/* ==========================================
+   File: _responsive.scss (REFACTORED for Mobile-First & DRY)
+   ========================================== */
+
+/* --- For TABLETS and larger (screens AT LEAST 768px wide) --- */
+@media (min-width: 48em) {
+  /* Layout Changes */
+  .site-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Component Changes */
+  .connect-wallet-btn {
+    width: auto;
+  }
+}
+
+/* --- For LARGE DESKTOPS (screens AT LEAST 1024px wide) --- */
+@media (min-width: 64em) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+// Mobile-first responsive breakpoints
+@media (min-width: $breakpoint-tablet) {
+  // Layout Changes
+  .site-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  // Grid Systems
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // Component Changes
+  .connect-wallet-btn {
+    width: auto;
+    padding: 1rem 1.5rem;
+  }
+
+  // Container adjustments
+  .container {
+    max-width: 900px;
+  }
+}
+
+@media (min-width: $breakpoint-desktop) {
+  // Grid Systems for desktop - Both use 4 columns
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  // Container adjustments
+  .container {
+    max-width: 1200px;
+  }
+}
+
+// Visibility utilities
+.is-hidden-mobile {
+  @media (max-width: #{$breakpoint-tablet - 0.0625em}) {
+    display: none !important;
+  }
+}
+
+.is-hidden-tablet-up {
+  @include tablet-up {
+    display: none !important;
+  }
+}
+
+.is-visible-mobile-only {
+  display: block;
+
+  @include tablet-up {
+    display: none !important;
+  }
+}
+
+.is-visible-tablet-up {
+  display: none;
+
+  @include tablet-up {
+    display: block;
+  }
+}
+
+// Text alignment utilities
+.text-center-mobile {
+  text-align: center;
+
+  @include tablet-up {
+    text-align: left;
+  }
+}
+
+// Spacing utilities
+.u-mb-responsive {
+  margin-bottom: 1rem;
+
+  @include tablet-up {
+    margin-bottom: 2rem;
+  }
+}
+
+.u-p-responsive {
+  padding: 1rem;
+
+  @include tablet-up {
+    padding: 2rem;
+  }
+}
+
+// Accessibility: Reduce motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

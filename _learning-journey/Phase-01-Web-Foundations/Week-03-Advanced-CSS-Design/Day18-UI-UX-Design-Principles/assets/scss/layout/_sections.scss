@@ -1,0 +1,70 @@
+// ==========================================
+// File: layout/_sections.scss
+// Purpose: Major section layouts and structure
+// ==========================================
+
+// General section styling
+section {
+  padding: 6rem 0;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+// Hero section specific
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh;
+  padding: 4rem 0;
+}
+
+// Content sections
+.about-section,
+.skills-section,
+.projects-section {
+  text-align: center;
+
+  .container > p {
+    max-width: $max-content-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Skills Grid
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop-up {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+// Projects Grid - auto-fit
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+
+  @include tablet-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop-up {
+    @include grid-auto-fit;
+  }
+}

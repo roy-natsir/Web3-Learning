@@ -1,0 +1,51 @@
+/* ==========================================
+   File: sections.css
+   Purpose: Layout & styling for major sections
+   Includes: hero, about, skills, projects, contact
+========================================== */
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+section {
+  padding: 4rem 0;
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.about-section,
+.skills-section,
+.projects-section,
+.contact-details {
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+.hero-section h1 {
+  animation: fadeInUp 0.8s ease forwards;
+}
+.hero-section p {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.3s;
+}
+.hero-section .connect-wallet-btn {
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 0.6s;
+}

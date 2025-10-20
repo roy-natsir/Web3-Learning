@@ -1,0 +1,43 @@
+/* ==========================================
+   File: _responsive.scss (REFACTORED for Mobile-First & DRY)
+   ========================================== */
+
+/* --- For TABLETS and larger (screens AT LEAST 768px wide) --- */
+@media (min-width: 48em) {
+  /* Layout Changes */
+  .site-header .container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Component Changes */
+  .connect-wallet-btn {
+    width: auto;
+  }
+}
+
+/* --- For LARGE DESKTOPS (screens AT LEAST 1024px wide) --- */
+@media (min-width: 64em) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

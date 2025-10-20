@@ -1,0 +1,29 @@
+// ==========================================
+// File: layout/_container.scss
+// Purpose: Container and responsive layout structure
+// ==========================================
+
+// Default container
+.container {
+  max-width: $max-content-width;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  // Responsive adjustments
+  @include tablet-up {
+    max-width: 900px;
+  }
+
+  @include desktop-up {
+    max-width: 1200px;
+  }
+}
+
+// Fluid container
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

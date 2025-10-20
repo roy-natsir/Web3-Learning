@@ -1,0 +1,84 @@
+/* ==========================================
+   File: _typography.scss
+   ========================================== */
+
+/* 1. Base Document Typography */
+html {
+  font-size: 100%;
+}
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+}
+
+/* 2. Headings (Corrected Syntax) */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
+  color: var(--color-text);
+}
+
+/* Individual heading sizes */
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+}
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+/* h4, h5, h6 can be added here if needed */
+
+/* 3. Text & List Elements (Corrected Logic) */
+p {
+  margin-bottom: var(--spacing);
+}
+
+ul {
+  list-style-type: disc;
+}
+ol {
+  list-style-type: decimal;
+}
+ul,
+ol {
+  margin-bottom: var(--spacing);
+  padding-left: 1.25rem;
+}
+
+/* 4. Inline & Block-level Text Elements */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+em {
+  font-style: italic;
+}
+
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--color-accent);
+  color: var(--color-text-secondary);
+  font-style: italic;
+}

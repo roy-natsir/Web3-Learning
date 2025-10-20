@@ -1,0 +1,159 @@
+/* ==========================================
+   File: sections.css
+   Purpose: Layout & styling for major sections
+   Includes: hero, about, skills, projects, contact
+========================================== */
+
+.connect-wallet-btn {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  transition:
+    transform 0.25s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    box-shadow 0.2s ease;
+  will-change: transform;
+}
+
+.connect-wallet-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  animation: pulse 0.6s ease-in-out;
+}
+
+.connect-wallet-btn:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Fixed Social Button Styles */
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.social-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--color-surface, #f5f5f5);
+  text-decoration: none;
+  font-size: 22px;
+  overflow: hidden;
+  border: 1px solid var(--color-border, #e0e0e0);
+  transition: all 0.3s ease;
+}
+
+.social-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  transform: scale(0.8);
+  z-index: 1;
+}
+
+/* Icon positioning */
+.social-button i,
+.social-button img,
+.social-button svg {
+  position: relative;
+  z-index: 2;
+  transition:
+    color 0.3s ease,
+    filter 0.3s ease;
+}
+
+.social-button.github {
+  color: #333;
+}
+.social-button.github::before {
+  background-color: #333;
+}
+
+.social-button.x {
+  color: #000;
+}
+.social-button.x::before {
+  background-color: #000;
+}
+
+.social-button.linkedin {
+  color: #0077b5;
+}
+.social-button.linkedin::before {
+  background-color: #0077b5;
+}
+
+.social-button.telegram {
+  color: #26a5e4;
+}
+.social-button.telegram::before {
+  background-color: #26a5e4;
+}
+
+.social-button.medium {
+  color: #000;
+}
+.social-button.medium::before {
+  background-color: #000;
+}
+
+.social-button.buymeacoffee {
+  color: #ffdd00;
+}
+.social-button.buymeacoffee::before {
+  background-color: #ffdd00;
+}
+
+.social-button:hover::before,
+.social-button:focus-visible::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.social-button:hover i,
+.social-button:focus-visible i,
+.social-button:hover svg,
+.social-button:focus-visible svg {
+  color: white;
+  fill: white;
+}
+
+.social-button.buymeacoffee img {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  z-index: 2;
+  transition: filter 0.3s ease;
+}
+
+.social-button.buymeacoffee:hover img,
+.social-button.buymeacoffee:focus-visible img {
+  filter: brightness(0) invert(1);
+}
+
+/* SVG specific styles */
+.social-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}

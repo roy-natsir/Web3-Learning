@@ -1,0 +1,57 @@
+// ==========================================
+// File: components/_loader.scss
+// Purpose: Loading animation component
+// ==========================================
+
+.loader {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 2rem auto;
+
+  div {
+    width: 10px;
+    height: 10px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+  }
+
+  // Generate delay
+  @for $i from 1 through 3 {
+    div:nth-child(#{$i}) {
+      animation-delay: -0.16s * (3 - $i);
+    }
+  }
+}
+
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(var(--color-bg-dark-rgb, 26, 26, 26), 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+
+  &.hidden {
+    display: none;
+  }
+}
+
+.spinner {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 4px solid transparent;
+  border-top-color: var(--color-accent);
+  animation: spin 1s linear infinite;
+}
+
+.loading-text {
+  margin-top: 1rem;
+  font-weight: 600;
+  color: var(--color-text-dark);
+}

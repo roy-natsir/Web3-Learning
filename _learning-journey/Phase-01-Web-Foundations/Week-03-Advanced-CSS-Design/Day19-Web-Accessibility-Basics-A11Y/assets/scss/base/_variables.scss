@@ -1,0 +1,75 @@
+/* ==========================================
+   File: _variables.scss
+   Purpose: Global variables for the project
+   Includes: SCSS variables + CSS custom properties
+========================================== */
+
+/* ------------------------------------------
+   SCSS Variables (compile-time)
+------------------------------------------ */
+$font-main:
+  "Inter",
+  Segoe UI,
+  Tahoma,
+  Geneva,
+  Verdana,
+  sans-serif;
+
+$color-bg: #ffffff;
+$color-surface: #f8f9fa;
+$color-border: #e9ecef;
+$color-text: #212529;
+$color-text-secondary: #6c757d;
+$color-accent: #7c3aed;
+$color-accent-rgb: 124, 58, 237; // Orchis purple in RGB
+
+$radius: 8px;
+$spacing: 1rem;
+$shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+
+// Dark mode variants
+$color-bg-dark: #1a1a1a;
+$color-surface-dark: #2c2c2c;
+$color-border-dark: #444;
+$color-text-dark: #e0e0e0;
+$color-text-secondary-dark: #a0a0a0;
+
+/* ------------------------------------------
+   CSS Custom Properties (runtime)
+------------------------------------------ */
+:root {
+  /* Colors */
+  --color-bg: #{$color-bg};
+  --color-surface: #{$color-surface};
+  --color-border: #{$color-border};
+  --color-text: #{$color-text};
+  --color-text-secondary: #{$color-text-secondary};
+  --color-accent: #{$color-accent};
+  --color-accent-rgb: #{$color-accent-rgb};
+
+  /* Fonts */
+  --font-main: #{$font-main};
+
+  /* Layout tokens */
+  --radius: #{$radius};
+  --spacing: #{$spacing};
+  --shadow: #{$shadow};
+
+  /* Dark mode variables */
+  --color-bg-dark: #{$color-bg-dark};
+  --color-surface-dark: #{$color-surface-dark};
+  --color-border-dark: #{$color-border-dark};
+  --color-text-dark: #{$color-text-dark};
+  --color-text-secondary-dark: #{$color-text-secondary-dark};
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-bg-dark);
+    --color-surface: var(--color-surface-dark);
+    --color-border: var(--color-border-dark);
+    --color-text: var(--color-text-dark);
+    --color-text-secondary: var(--color-text-secondary-dark);
+  }
+}

@@ -1,0 +1,22 @@
+/* ==========================================
+   File: sections.css
+   Purpose: Layout & styling for major sections
+   Includes: hero, about, skills, projects, contact
+========================================== */
+
+.site-footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-details h2,
+.contact-details p {
+  margin-bottom: 2rem;
+}
+
+.copyright-info {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}

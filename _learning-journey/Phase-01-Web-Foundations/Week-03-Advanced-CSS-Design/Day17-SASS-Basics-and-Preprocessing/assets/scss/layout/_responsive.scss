@@ -1,0 +1,53 @@
+/* ==========================================
+   File: _responsive.scss (REFACTORED for Mobile-First & DRY)
+   ========================================== */
+
+/* -------------------------------------------
+   Tablet & Desktop Breakpoints
+   - We use a Mobile-First approach.
+   - Default styles are for mobile.
+   - We add complexity for larger screens using min-width.
+----------------------------------------------*/
+
+/* --- For TABLETS and larger (screens AT LEAST 768px wide) --- */
+@media (min-width: 48em) {
+  /* 768px */
+
+  .site-header {
+    .container {
+      flex-direction: row; /* Switch header back to horizontal */
+    }
+  }
+
+  .main-nav {
+    ul {
+      flex-wrap: nowrap; /* Prevent wrapping on larger screens */
+    }
+  }
+
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* --- For LARGE DESKTOPS (screens AT LEAST 1024px wide) --- */
+@media (min-width: 64em) {
+  /* 1024px */
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* -------------------------------------------
+   Accessibility: Prefers Reduced Motion
+   - This single block handles motion reduction for the entire site.
+----------------------------------------------*/
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

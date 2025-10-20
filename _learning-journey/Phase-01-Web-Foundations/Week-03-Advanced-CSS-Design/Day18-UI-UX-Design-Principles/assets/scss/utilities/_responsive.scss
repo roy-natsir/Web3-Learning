@@ -1,0 +1,59 @@
+// ==========================================
+// File: utilities/_responsive.scss
+// Purpose: Responsive utilities and overrides (refactored)
+// ==========================================
+
+// Visibility utilities
+.is-hidden-mobile {
+  @media (max-width: #{$breakpoint-tablet - 0.0625em}) {
+    display: none !important;
+  }
+}
+
+.is-hidden-tablet-up {
+  @include tablet-up {
+    display: none !important;
+  }
+}
+
+.is-visible-mobile-only {
+  display: block;
+
+  @include tablet-up {
+    display: none !important;
+  }
+}
+
+.is-visible-tablet-up {
+  display: none;
+
+  @include tablet-up {
+    display: block;
+  }
+}
+
+// Text alignment utilities
+.text-center-mobile {
+  text-align: center;
+
+  @include tablet-up {
+    text-align: left;
+  }
+}
+
+// Spacing utilities (scalable pattern)
+.u-mb-responsive {
+  margin-bottom: 1rem;
+
+  @include tablet-up {
+    margin-bottom: 2rem;
+  }
+}
+
+.u-p-responsive {
+  padding: 1rem;
+
+  @include tablet-up {
+    padding: 2rem;
+  }
+}

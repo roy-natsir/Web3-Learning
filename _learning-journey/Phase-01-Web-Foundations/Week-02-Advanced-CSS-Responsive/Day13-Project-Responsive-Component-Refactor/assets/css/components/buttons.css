@@ -1,0 +1,113 @@
+.connect-wallet-btn {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.connect-wallet-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.connect-wallet-btn:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.social-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  text-decoration: none;
+  color: currentColor;
+  font-size: 22px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.social-button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: currentColor;
+  transform: scale(0);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+.social-button:hover::after,
+.social-button:focus::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.social-button i,
+.social-button img,
+.social-button svg {
+  position: relative;
+  z-index: 1;
+  transition:
+    color 0.3s ease,
+    filter 0.3s ease;
+}
+
+.social-button:hover i,
+.social-button:focus i,
+.social-button:hover svg,
+.social-button:focus svg {
+  color: #fff;
+  fill: #fff;
+}
+
+/* Specific platform colors */
+.social-button.linkedin {
+  color: #0077b5;
+}
+.social-button.telegram {
+  color: #26a5e4;
+}
+
+.social-button.buymeacoffee {
+  color: #ffdd00;
+}
+
+.social-button.buymeacoffee img {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.social-button.buymeacoffee:hover img,
+.social-button.buymeacoffee:focus img {
+  filter: brightness(0) invert(1);
+}
+
+.social-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}

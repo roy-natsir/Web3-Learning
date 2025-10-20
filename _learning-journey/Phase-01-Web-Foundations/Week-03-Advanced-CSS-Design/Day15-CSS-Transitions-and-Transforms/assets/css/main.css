@@ -1,0 +1,13 @@
+/* --- 1. Base Styles --- */
+@import url("base/reset.css");
+@import url("base/variables.css");
+@import url("base/typography.css");
+
+/* --- 2. Layout Styles --- */
+@import url("layout/sections.css");
+@import url("layout/header.css");
+@import url("layout/footer.css");
+
+/* --- 3. Component Styles --- */
+@import url("components/cards.css");
+@import url("components/buttons.css");

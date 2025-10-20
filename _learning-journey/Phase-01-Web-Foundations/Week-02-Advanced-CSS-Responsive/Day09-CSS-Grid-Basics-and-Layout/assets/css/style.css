@@ -1,0 +1,570 @@
+/* =====================================================
+       Project: Orchis Portfolio
+       Author: Roy Natsir
+       ===================================================== */
+
+/* --------------------------
+       1. CSS Reset & Variables
+    -----------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f8f9fa;
+  --color-border: #e9ecef;
+  --color-text: #212529;
+  --color-text-secondary: #6c757d;
+  --color-accent: #7c3aed;
+  --color-accent-rgb: 124, 58, 237; /* RGB version of Orchis purple */
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --radius: 8px;
+  --spacing: 1rem;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  /* Dark mode variables */
+  --color-bg-dark: #1a1a1a;
+  --color-surface-dark: #2c2c2c;
+  --color-border-dark: #444;
+  --color-text-dark: #e0e0e0;
+  --color-text-secondary-dark: #a0a0a0;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: var(--color-bg-dark);
+    --color-surface: var(--color-surface-dark);
+    --color-border: var(--color-border-dark);
+    --color-text: var(--color-text-dark);
+    --color-text-secondary: var(--color-text-secondary-dark);
+  }
+}
+
+/* --------------------------
+       2. Base Styles
+    -----------------------------*/
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-size: clamp(16px, 2.5vw, 18px);
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+p {
+  margin-bottom: var(--spacing);
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+/* Skip link for accessibility */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* --------------------------
+       3. Header
+    -----------------------------*/
+.site-header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing) 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.brand-logo .header-actions {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  font-weight: bold;
+  color: var(--color-text);
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.main-nav {
+  flex-grow: 1;
+}
+
+.main-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing);
+}
+
+.main-nav a {
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  background: var(--color-border);
+  text-decoration: none;
+}
+
+.main-nav a:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.connect-wallet-btn {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.connect-wallet-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.connect-wallet-btn:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* --------------------------
+       4. Sections & Content Styling
+    -----------------------------*/
+section {
+  padding: 4rem 0;
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.about-section,
+.skills-section,
+.projects-section,
+.contact-details {
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+}
+
+/* Skills Grid - Fixed for 4 columns with equal heights */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  text-align: left;
+  align-items: stretch; /* Ensure equal height cards */
+}
+
+.skill-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
+  border-color: var(--color-accent);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  min-height: 60px;
+  flex-shrink: 0;
+}
+
+.card-header h3 {
+  color: var(--color-accent);
+  font-size: 1.1rem;
+  margin: 0;
+  margin-left: 12px;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.card-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+}
+
+.card-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.skill-card p {
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.skill-card ul {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 1.2rem;
+}
+
+.skill-card li {
+  position: relative;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.skill-card li img {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.skill-card li::before {
+  display: none;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing);
+  margin-top: 2.5rem;
+  text-align: left;
+  align-items: stretch;
+}
+
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.project-card h3 {
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+  height: 3.6rem;
+  display: flex;
+  align-items: flex-start;
+  line-height: 1.3;
+}
+
+.project-card:hover {
+  border-color: var(--color-accent);
+  background: var(--color-surface);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+}
+
+.project-card .card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .card-content p {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+}
+
+.project-card figcaption {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+  margin-top: 0.5rem;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+.tech-tag {
+  font-size: 0.75rem;
+  background-color: var(--color-border);
+  padding: 0.25rem 0.6rem;
+  border-radius: 9999px;
+  font-weight: 600;
+}
+
+/* --------------------------
+       5. Footer
+    -----------------------------*/
+.site-footer {
+  padding: 2rem 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.contact-details h2,
+.contact-details p {
+  margin-bottom: 2rem;
+}
+
+/* =====================================================
+       Component: Animated Social Media Buttons
+       ===================================================== */
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+}
+
+.social-button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  text-decoration: none;
+  color: currentColor;
+  font-size: 22px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.social-button::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background-color: currentColor;
+  transform: scale(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  z-index: 0;
+}
+
+.social-button:hover::after,
+.social-button:focus::after {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.social-button i,
+.social-button img,
+.social-button svg {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+
+.social-button:hover i,
+.social-button:focus i,
+.social-button:hover svg,
+.social-button:focus svg {
+  color: #fff;
+  fill: #fff;
+}
+
+/* Specific platform colors */
+.social-button.linkedin {
+  color: #0077b5;
+}
+.social-button.telegram {
+  color: #26a5e4;
+}
+
+.social-button.buymeacoffee {
+  color: #ffdd00;
+}
+
+.social-button.buymeacoffee img {
+  width: 26px;
+  height: 26px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+.social-button.buymeacoffee:hover img,
+.social-button.buymeacoffee:focus img {
+  filter: brightness(0) invert(1);
+}
+
+.social-button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.copyright-info {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+/* --------------------------
+       6. Media Queries
+    -----------------------------*/
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+
+  .skill-card {
+    padding: 1.25rem;
+  }
+
+  .card-header h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+  }
+
+  h2 {
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+  }
+
+  .site-header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    margin-top: 2rem;
+  }
+
+  .hero-section {
+    min-height: 40vh;
+  }
+
+  .skill-card {
+    padding: 1rem;
+  }
+
+  .card-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-header h3 {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}

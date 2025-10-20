@@ -1,0 +1,80 @@
+// ==========================================
+// File: layout/_sections.scss
+// Purpose: Major section layouts and structure
+// ==========================================
+
+// General section styling
+section {
+  padding: 6rem 0;
+}
+
+.section-header {
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+// Hero section specific
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh;
+  padding: 4rem 0;
+}
+
+// Content sections
+.about-section,
+.skills-section,
+.projects-section {
+  text-align: center;
+
+  .container > p {
+    max-width: $max-content-width;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* --- Wrapper for positioning --- */
+.hero-about-wrapper {
+  position: relative;
+  padding-bottom: 5rem;
+}
+
+/* --- Redesigned, Modern Hero Section --- */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: #2c1a4d;
+  background-image: radial-gradient(
+    ellipse at center,
+    rgba(var(--color-accent-rgb), 0.3) 0%,
+    rgba(var(--color-accent-rgb), 0.05) 50%,
+    transparent 70%
+  );
+
+  color: var(--color-text-dark);
+  padding: 2rem;
+  border-bottom: 1px solid var(--color-border-dark);
+}
+
+.hero-section h1 {
+  color: #ffffff;
+  text-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section .section-subtitle {
+  color: var(--color-text-secondary-dark);
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin-top: 1rem;
+}
+.section-subtitle {
+  margin-top: 1rem;
+}

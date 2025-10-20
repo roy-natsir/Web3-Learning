@@ -1,0 +1,23 @@
+/* ==========================================
+   File: main.scss 
+   ========================================== */
+
+/* --- 1. Base & Foundational Styles --- */
+@use "base/reset";
+@use "base/variables";
+@use "base/typography";
+@use "base/animations";
+
+/* --- 2. Layout Structure --- */
+@use "layout/container";
+@use "layout/sections";
+@use "layout/header";
+@use "layout/footer";
+
+/* --- 3. Reusable Components --- */
+@use "components/cards";
+@use "components/buttons";
+@use "components/loader";
+
+/* --- 4. Responsive Overrides --- */
+@use "layout/responsive";

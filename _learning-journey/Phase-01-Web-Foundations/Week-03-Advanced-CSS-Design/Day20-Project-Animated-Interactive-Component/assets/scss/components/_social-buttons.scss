@@ -1,0 +1,111 @@
+// ==========================================
+// File: components/_social-buttons.scss
+// Purpose: Social media button styles
+// ==========================================
+
+// Brand color map
+$social-colors: (
+  github: #333,
+  x: #000,
+  linkedin: #0077b5,
+  telegram: #26a5e4,
+  medium: #000,
+  buymeacoffee: #ffdd00,
+);
+
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.social-button {
+  position: relative;
+  @include flex-center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  text-decoration: none;
+  font-size: 22px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+
+  // Hover background effect
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    opacity: 0;
+    transform: scale(0.8);
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    z-index: 1;
+  }
+
+  // Icon positioning
+  i,
+  img,
+  svg {
+    position: relative;
+    z-index: 2;
+    transition:
+      color 0.3s ease,
+      filter 0.3s ease;
+  }
+
+  // Generate brand variants dynamically
+  @each $name, $color in $social-colors {
+    &.#{$name} {
+      color: $color;
+
+      &::before {
+        background-color: $color;
+      }
+    }
+  }
+
+  // Special case: Buy Me a Coffee icon
+  &.buymeacoffee {
+    img {
+      width: 26px;
+      height: 26px;
+      z-index: 2;
+      transition: filter 0.3s ease;
+    }
+
+    &:hover img,
+    &:focus-visible img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
+  // Hover states
+  &:hover,
+  &:focus-visible {
+    &::before {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    i,
+    svg {
+      color: white;
+      fill: white;
+    }
+  }
+
+  // SVG specific styles
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+  }
+
+  @include focus-style;
+}

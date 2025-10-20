@@ -1,0 +1,317 @@
+/* =====================================================
+   Project: Orchis Portfolio
+   Author: Roy Natsir
+   ===================================================== */
+
+/* --------------------------
+   1. CSS Reset & Variables
+-----------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s ease-in-out;
+}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+:root {
+  --color-bg: #0d0d0d;
+  --color-surface: #1a1a1a;
+  --color-border: #2c2c2c;
+  --color-text: #f5f5f5;
+  --color-text-secondary: #a0aec0;
+  --color-accent: #7c3aed;
+  --font-main: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --radius: 8px;
+  --spacing: 1rem;
+}
+
+/* --------------------------
+   2. Base Styles
+-----------------------------*/
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+p {
+  margin-bottom: var(--spacing);
+}
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--spacing);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skip-link:focus {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+/* --------------------------
+   3. Header (As per previous approved version)
+-----------------------------*/
+.site-header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing) 0;
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.brand-logo {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: var(--spacing);
+}
+
+.main-nav a {
+  color: var(--color-text);
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+}
+
+.main-nav a:hover {
+  background: var(--color-border);
+  text-decoration: none;
+}
+
+.main-nav a:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
+}
+
+.connect-wallet-btn {
+  background: var(--color-accent);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.connect-wallet-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.connect-wallet-btn:focus {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+a,
+.skill-card,
+.project-card,
+.connect-wallet-btn {
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+/* --------------------------
+   4. Sections & Content Styling
+-----------------------------*/
+section {
+  padding: 4rem 0;
+}
+
+.about-section,
+.skills-section,
+.projects-section {
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+}
+
+/* Style for subtitles like "Core features being built..." */
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-secondary);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.skills-grid,
+.projects-grid {
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.skill-card,
+.project-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin-bottom: var(--spacing);
+}
+
+.skill-card h3,
+.project-card h3 {
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card:hover,
+.project-card:hover {
+  border-color: var(--color-accent);
+  background: #222;
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------
+   5. Footer (REVISED)
+-----------------------------*/
+.site-footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.contact-details h3,
+.contact-details p {
+  margin-bottom: 1.5rem;
+}
+
+/* NEW: Styling for horizontal and centered social media links */
+.social-nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.social-nav a {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.copyright-info {
+  font-size: 0.875rem;
+  color: var(--color-text-secondary);
+}
+
+@media (max-width: 768px) {
+  h2 {
+    font-size: 1.5rem;
+  }
+  .skills-grid,
+  .projects-grid {
+    margin-top: 2rem;
+  }
+}
+
+/* =====================================================
+   Day 05: CSS Flexbox Introduction
+   ===================================================== */
+
+/* --- 1. Header Layout --- */
+/* Make the container inside the header a flex container */
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Make the navigation list a flex container */
+.main-nav ul {
+  display: flex;
+  gap: var(--spacing);
+}
+
+/* --- 2. Hero Section Layout --- */
+.hero-section {
+  /* Define the section itself as a flex container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 50vh;
+}
+
+/* --- 3. Optional: Make the skills and projects grids ready for future grid/flex layouts --- */
+.skills-grid,
+.projects-grid {
+  /* Step 1: Activate Grid Layout */
+  display: grid;
+
+  /* Step 2: Define a 2-column layout */
+  grid-template-columns: repeat(2, 1fr);
+
+  /* Step 3: Define the gap (spacing) between grid items */
+  gap: var(--spacing);
+  margin-top: 3rem;
+  text-align: left;
+}
+
+.skill-card,
+.project-card {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .skills-grid,
+  .projects-grid {
+    grid-template-columns: 1fr; /* jadi 1 kolom di HP */
+  }
+}

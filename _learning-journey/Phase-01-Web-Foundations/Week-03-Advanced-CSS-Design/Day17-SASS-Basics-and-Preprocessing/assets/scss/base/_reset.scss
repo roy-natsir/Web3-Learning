@@ -1,0 +1,72 @@
+/* ==========================================
+   File: _reset.scss
+   Purpose: Normalize browser defaults & set a clean baseline
+   ========================================== */
+
+/* 1. Remove default margin, padding, and set border-box */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Remove default list styles */
+ul,
+ol {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* 3. Remove link underline and inherit color */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* 4. Ensure images and media scale nicely */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 5 & 6. Inherit fonts for form elements and reset buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* 7. Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 8. Set consistent line-height */
+body {
+  line-height: 1.5;
+}
+
+/* 9. Remove default table spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

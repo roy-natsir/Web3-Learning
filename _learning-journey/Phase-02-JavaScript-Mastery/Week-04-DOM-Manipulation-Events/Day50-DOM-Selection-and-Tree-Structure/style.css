@@ -1,0 +1,28 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0e1116;
+  color: #e0e6ed;
+}
+
+#dashboard {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 12px;
+  background: #1a1f29;
+}
+
+.wallet {
+  padding: 6px;
+  margin: 4px 0;
+  border-bottom: 1px solid #333;
+}
+
+.highlight {
+  background-color: #4a90e2;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 4px 8px;
+  transition: background 0.3s ease;
+}

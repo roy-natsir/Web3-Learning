@@ -1,0 +1,49 @@
+// ==========================================
+// File: layout/_footer.scss
+// Purpose: Site footer styles (refactored & responsive)
+// ==========================================
+
+.site-footer {
+  padding: calc(var(--spacing) * 3) 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  background-color: var(--color-surface);
+
+  .section-header {
+    margin-bottom: calc(var(--spacing) * 2);
+
+    h2 {
+      margin-bottom: var(--spacing);
+      color: var(--color-accent);
+    }
+  }
+
+  .social-buttons {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
+
+  .copyright-info {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+
+    p {
+      max-width: none;
+      margin-bottom: 0;
+    }
+
+    time {
+      font-weight: 500;
+    }
+  }
+
+  // Responsive tweaks
+  @include tablet-up {
+    text-align: center;
+  }
+
+  @include desktop-up {
+    .section-header {
+      margin-bottom: calc(var(--spacing) * 2.5);
+    }
+  }
+}

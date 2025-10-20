@@ -1,0 +1,19 @@
+/* ==========================================
+   File: _footer.scss
+   ========================================== */
+
+.site-footer {
+  padding: 3rem 0;
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+
+  .section-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .copyright-info {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin-top: 2.5rem;
+  }
+}

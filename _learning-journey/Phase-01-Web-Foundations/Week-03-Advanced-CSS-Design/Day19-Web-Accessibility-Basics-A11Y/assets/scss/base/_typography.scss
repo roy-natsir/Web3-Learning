@@ -1,0 +1,129 @@
+// ==========================================
+// File: base/_typography.scss
+// Purpose: Typography styles and hierarchy
+// ==========================================
+
+// Base body typography
+body {
+  font-family: var(--font-main);
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+// Headings hierarchy
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  line-height: 1.25;
+  margin-bottom: 0.5em;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
+h4 {
+  font-size: clamp(1.1rem, 2vw, 1.4rem);
+}
+
+h5 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+h6 {
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+// Paragraphs
+p {
+  margin-bottom: var(--spacing);
+}
+
+// Readable text constraint
+.text-readable p,
+.section-subtitle {
+  max-width: $max-content-width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  color: var(--color-text-secondary);
+  margin-bottom: 3rem;
+}
+
+// Lists
+ul,
+ol {
+  margin-bottom: var(--spacing);
+
+  &:not(.reset-list) {
+    padding-left: 1.25rem;
+
+    &.disc {
+      list-style-type: disc;
+    }
+
+    &.decimal {
+      list-style-type: decimal;
+    }
+  }
+
+  li {
+    margin-bottom: 0.5em;
+    line-height: 1.5;
+  }
+}
+
+// Inline elements
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
+}
+
+strong {
+  font-weight: 700;
+}
+
+em {
+  font-style: italic;
+}
+
+// Blockquotes
+blockquote {
+  margin: 1.5rem 0;
+  padding-left: 1rem;
+  border-left: 4px solid var(--color-accent);
+  color: var(--color-text-secondary);
+  font-style: italic;
+  font-size: 1.05em;
+}
