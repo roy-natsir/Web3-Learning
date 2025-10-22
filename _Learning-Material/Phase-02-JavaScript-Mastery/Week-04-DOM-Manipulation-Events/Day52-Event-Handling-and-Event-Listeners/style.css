@@ -1,0 +1,49 @@
+#dashboard {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #1a1f29;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+h2 {
+  text-align: center;
+  color: #90caf9;
+}
+
+.wallet {
+  padding: 6px;
+  margin: 4px 0;
+  border-bottom: 1px solid #333;
+  transition: background 0.3s ease;
+}
+
+.wallet:hover {
+  background: #232b3b;
+}
+
+.highlight {
+  background: #2563eb;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  padding: 4px 6px;
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  background: #2563eb;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1e40af;
+}
