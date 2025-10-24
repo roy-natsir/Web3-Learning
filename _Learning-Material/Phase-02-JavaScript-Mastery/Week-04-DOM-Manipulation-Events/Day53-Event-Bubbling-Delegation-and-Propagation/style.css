@@ -1,0 +1,59 @@
+body {
+  background: #0e1116;
+  color: #e0e6ed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#dashboard {
+  width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #1a1f29;
+  border-radius: 10px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.wallet {
+  padding: 8px;
+  margin: 6px 0;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  transition: background 0.3;
+}
+
+.wallet:hover {
+  background: #232b3b;
+}
+
+.highlight {
+  background: #3b82f6;
+  color: #fff;
+  border-radius: 4px;
+}
+
+#log {
+  margin-top: 15px;
+  padding: 10px;
+  background: #111827;
+  border-radius: 6px;
+  font-size: 13px;
+  white-space: pre-wrap;
+  line-height: 1.4;
+}
+
+button {
+  margin-top: 10px;
+  width: 100%;
+  padding: 8px 12px;
+  background: #2563eb;
+  border: none;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #1e40af;
+}
