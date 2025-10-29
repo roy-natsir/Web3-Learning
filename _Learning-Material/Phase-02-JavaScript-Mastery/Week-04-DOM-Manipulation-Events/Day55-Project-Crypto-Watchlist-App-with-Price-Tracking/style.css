@@ -1,0 +1,42 @@
+body {
+  background: #f1111a;
+  color: #e6edf3;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+#app {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #1b1e2a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+input {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  margin-right: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  background: #3a6df0;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+li {
+  margin: 10px 0;
+  padding: 8px;
+  background: #262b3a;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

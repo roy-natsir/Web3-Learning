@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Crypto Watchlist App (Mock Version)</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>🪙 Crypto Watchlist (local Simulation)</h1>
+
+      <form id="addForm">
+        <input
+          type="text"
+          id="cryptoInput"
+          placeholder="Enter crpto name (e.g., Bitcoin)"
+          required
+        />
+        <button type="submit">Add</button>
+      </form>
+      <ul id="watchlist"></ul>
+      <button id="refreshBtn">🔄 Refresh Mock Prices</button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
